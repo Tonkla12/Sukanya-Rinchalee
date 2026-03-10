@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> ระบบตู้ปลาอัตโนมัติ</title>
+  <title>Smart Aquarium Cloud Control</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -125,13 +125,13 @@
 <body>
 
   <div class="header">
-    <div><i class="fas fa-fish"></i> ระบบตู้ปลาอัตโนมัติ</div>
+    <div><i class="fas fa-fish"></i> Smart Aquarium Cloud</div>
     <div class="clock-display" id="clock">00:00:00</div>
   </div>
   
   <div class="tab-container">
     <div class="tab">
-      <button id="btn-status" class="tablinks active" onclick="openTab(event, 'Status')">หน้าหลัก</button>
+      <button id="btn-status" class="tablinks active" onclick="openTab(event, 'Status')">แดชบอร์ด</button>
       <button id="btn-settings" class="tablinks" onclick="openTab(event, 'Settings')">ตั้งค่า</button>
     </div>
   </div>
@@ -151,8 +151,8 @@
         <div class="control-grid">
           <button class="btn btn-light" onclick="toggle('light', 'on')"><i class="fas fa-lightbulb"></i>เปิดไฟ</button>
           <button class="btn btn-off" onclick="toggle('light', 'off')"><i class="fas fa-power-off"></i>ปิดไฟ</button>
-          <button class="btn btn-oxy" onclick="toggle('oxygen', 'on')"><i class="fas fa-wind"></i>เปิดออกซิเจน</button>
-          <button class="btn btn-off" onclick="toggle('oxygen', 'off')"><i class="fas fa-power-off"></i>ปิดออกซิเจน</button>
+          <button class="btn btn-oxy" onclick="toggle('oxygen', 'on')"><i class="fas fa-wind"></i>เปิดอ๊อก</button>
+          <button class="btn btn-off" onclick="toggle('oxygen', 'off')"><i class="fas fa-power-off"></i>ปิดอ๊อก</button>
           <button class="btn btn-feed" onclick="feed()"><i class="fas fa-utensils"></i> ให้อาหารทันที</button>
         </div>
       </div>
@@ -227,7 +227,7 @@
         lightOn: formData.get('lightOn'),
         lightOff: formData.get('lightOff'),
         feedTime: formData.get('feedTime')
-      }).then(() => alert("บันทึกสำเร็จ"));
+      }).then(() => alert("บันทึกสำเร็จ!"));
     }
 
     db.ref().on('value', (snapshot) => {
